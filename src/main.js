@@ -100,9 +100,16 @@ const createFilter = () => {
   );
 };
 
+const createBoard = () => {
+  return (
+    '<section class="board container"></section>'
+  );
+};
+
 const renderTemplate = (container, template, place = 'beforeend') => {
   container.insertAdjacentHTML(place, template);
 };
 
 renderTemplate(siteMainControlElement, createMenu());
 renderTemplate(siteMainElement, createFilter());
+renderTemplate(siteMainElement, createBoard());
