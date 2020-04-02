@@ -35,8 +35,8 @@ const createMenu = () => {
   );
 };
 
-const renderTemplate = (container, template, place) => {
+const renderTemplate = (container, template, place = 'beforeend') => {
   container.insertAdjacentHTML(place, template);
 };
 
-renderTemplate(siteMainControlElement, createMenu(), 'beforeend');
+renderTemplate(siteMainControlElement, createMenu());
