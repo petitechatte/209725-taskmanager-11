@@ -1,7 +1,7 @@
-'use strict';
+`use strict`;
 
-const siteMainElement = document.querySelector('.main');
-const siteMainControlElement = siteMainElement.querySelector('.main__control');
+const siteMainElement = document.querySelector(`.main`);
+const siteMainControlElement = siteMainElement.querySelector(`.main__control`);
 
 const createMenu = () => {
   return (
@@ -102,14 +102,28 @@ const createFilter = () => {
 
 const createBoard = () => {
   return (
-    '<section class="board container"></section>'
+    `<section class="board container"></section>`
   );
 };
 
-const renderTemplate = (container, template, place = 'beforeend') => {
+const createSortingControls = () => {
+  return (
+    `<div class="board__filter-list">
+      <a href="#" class="board__filter" data-sort-type="default">SORT BY DEFAULT</a>
+      <a href="#" class="board__filter" data-sort-type="date-up">SORT BY DATE up</a>
+      <a href="#" class="board__filter" data-sort-type="date-down">SORT BY DATE down</a>
+    </div>`
+  );
+};
+
+const renderTemplate = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template);
 };
 
 renderTemplate(siteMainControlElement, createMenu());
 renderTemplate(siteMainElement, createFilter());
 renderTemplate(siteMainElement, createBoard());
+
+const board = siteMainElement.querySelector(`.board`);
+
+renderTemplate(board, createSortingControls());
