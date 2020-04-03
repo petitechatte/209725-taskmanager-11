@@ -1,4 +1,4 @@
-`use strict`;
+const TASKS_NUMBER = 3;
 
 const siteMainElement = document.querySelector(`.main`);
 const siteMainControlElement = siteMainElement.querySelector(`.main__control`);
@@ -320,7 +320,7 @@ const createTaskEditingForm = () => {
         </div>
       </form>
     </article>`
-  )
+  );
 };
 
 const createTaskTemplate = () => {
@@ -401,7 +401,7 @@ const tasksContainer = board.querySelector(`.board__tasks`);
 
 renderTemplate(tasksContainer, createTaskEditingForm());
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < TASKS_NUMBER; i++) {
   renderTemplate(tasksContainer, createTaskTemplate());
 }
 
