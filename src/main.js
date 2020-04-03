@@ -1,3 +1,5 @@
+"use strict";
+
 const TASKS_NUMBER = 3;
 
 const siteMainElement = document.querySelector(`.main`);
