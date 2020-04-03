@@ -371,6 +371,12 @@ const createTaskTemplate = () => {
   );
 };
 
+const createLoadButton = () => {
+  return (
+    `<button class="load-more" type="button">load more</button>`
+  );
+};
+
 const renderTemplate = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template);
 };
@@ -381,12 +387,13 @@ renderTemplate(siteMainControlElement, createMenu());
 renderTemplate(siteMainElement, createFilter());
 renderTemplate(siteMainElement, createBoard());
 
-// рендеринг блока сортировки и контейнера для карточек заданий
+// рендеринг блока сортировки, контейнера для карточек заданий и кнопки загрузки
 
 const board = siteMainElement.querySelector(`.board`);
 
 renderTemplate(board, createSortingControls());
 renderTemplate(board, createTasksContainer());
+renderTemplate(board, createLoadButton());
 
 // рендеринг карточек заданий и формы редактирования задания
 
