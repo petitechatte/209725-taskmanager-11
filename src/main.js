@@ -1,27 +1,12 @@
 import {createMenu} from "./components/menu.js";
 import {createFilter} from "./components/filter.js";
 import {createBoard} from "./components/board.js";
+import {createSortingControls} from "./components/sorting.js";
 
 const TASKS_NUMBER = 3;
 
 const siteMainElement = document.querySelector(`.main`);
 const siteMainControlElement = siteMainElement.querySelector(`.main__control`);
-
-const createSortingControls = () => {
-  return (
-    `<div class="board__filter-list">
-      <a href="#" class="board__filter" data-sort-type="default">SORT BY DEFAULT</a>
-      <a href="#" class="board__filter" data-sort-type="date-up">SORT BY DATE up</a>
-      <a href="#" class="board__filter" data-sort-type="date-down">SORT BY DATE down</a>
-    </div>`
-  );
-};
-
-const createTasksContainer = () => {
-  return (
-    `<div class="board__tasks"></div>`
-  );
-};
 
 const createTaskEditingForm = () => {
   return (
@@ -292,8 +277,7 @@ renderTemplate(siteMainElement, createBoard());
 
 const board = siteMainElement.querySelector(`.board`);
 
-renderTemplate(board, createSortingControls());
-renderTemplate(board, createTasksContainer());
+renderTemplate(board, createSortingControls(), `afterbegin`);
 renderTemplate(board, createLoadButton());
 
 // рендеринг карточек заданий и формы редактирования задания
